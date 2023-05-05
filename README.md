@@ -50,6 +50,8 @@ With this possible it is possible to automate tasks such as:
 
 ## YAML
 
+![image](https://user-images.githubusercontent.com/129942042/236437584-cb191f4b-1f9a-4abd-84a7-2e794a485836.png)
+
 - Human-readable data serialisation **language** that is used to define data structures such as lists, maps, and key-value pairs.
 - Used to define the desired state of infrastructure resources, such as servers, applications, and network devices. Ansible uses YAML syntax to create **playbooks**, which are scripts that define a set of tasks that should be executed on a set of hosts.
 
