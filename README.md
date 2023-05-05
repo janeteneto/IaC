@@ -71,3 +71,11 @@ With this possible it is possible to automate tasks such as:
 - Python betwwen 2.7 and 3.6
 - Ubuntu 18.04 (bcus it has git and python by default)
 (we don't need to install these anywhere)
+
+1. On the controller terminal run `sudo apt install software-properties-common`
+
+2. `ansible_controller_setup` script:
+````
+sudo apt install software-properties-common
+
+````
