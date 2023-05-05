@@ -27,6 +27,8 @@
 
 4. Configuration audit: Verifying the configuration of CIs against the baseline configuration, identifying any discrepancies, and taking corrective action.
 
+![image](https://user-images.githubusercontent.com/129942042/236437006-a2c19134-cc7a-428a-a89c-6e30f5f90bc6.png)
+
 ## Ansible
 
 - It is as IaC open-source configuration management and automation tool.
@@ -41,6 +43,8 @@ With this possible it is possible to automate tasks such as:
 - Continuous delivery and release management
 
 - It uses **clientless architecture**, which means it does not require any software to be installed on the target systems, it uses **SSH** instead
+
+![image](https://user-images.githubusercontent.com/129942042/236437344-27ed4426-d426-4a2e-b450-d5ed596e6a72.png)
 
 - Its **benefits** include ease of use, agentles/clientless architecture, good for production enviroment as it can be run multiple times without side effects, scalable and can be intregated with other tools like Jenkins, Kubernetes, and AWS which are tools we focus on in this course.
 
