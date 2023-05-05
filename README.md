@@ -33,6 +33,7 @@
 
 - It is as IaC open-source configuration management and automation tool.
 - Uses a simple, human-readable syntax called **YAML** to define tasks and playbooks, which are sequences of tasks that can be executed in order.
+- **Built in Python**
 
 With this possible it is possible to automate tasks such as:
 
@@ -58,11 +59,15 @@ With this possible it is possible to automate tasks such as:
 
 **Playbooks** - In Ansible, playboos are YAML files that describe the configuration and deployment of infrastructure resources. Playbooks contain a set of tasks, each of which performs a specific action on the target host(s), such as installing software packages, configuring settings, and starting or stopping services.
 
-3 vm in vagrant
-ansible is build in python
-script is in Ansible controller (yaml file)
-we dont need ansible on the nodes only the controller
-dependencies: 
+#
+
+![2023-05-05](https://user-images.githubusercontent.com/129942042/236445500-1c2c5e9c-b080-499d-abc4-2092357c751e.png)
+
+- The new script on the vagrant file is to run 3 virtual machines in vagrant
+- Script is in Ansible controller (yaml file)
+- We dont need ansible on the nodes only the controller
+
+**Dependencies:**
 - Python betwwen 2.7 and 3.6
 - Ubuntu 18.04 (bcus it has git and python by default)
-node = vm, ec2, instance
+(we don't need to install these anywhere)
