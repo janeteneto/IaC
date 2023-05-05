@@ -59,7 +59,7 @@ With this possible it is possible to automate tasks such as:
 
 **Playbooks** - In Ansible, playboos are YAML files that describe the configuration and deployment of infrastructure resources. Playbooks contain a set of tasks, each of which performs a specific action on the target host(s), such as installing software packages, configuring settings, and starting or stopping services.
 
-#
+# Ansible Controller Setup
 
 ![2023-05-05](https://user-images.githubusercontent.com/129942042/236445500-1c2c5e9c-b080-499d-abc4-2092357c751e.png)
 
@@ -72,10 +72,16 @@ With this possible it is possible to automate tasks such as:
 - Ubuntu 18.04 (bcus it has git and python by default)
 (we don't need to install these anywhere)
 
-1. On the controller terminal run `sudo apt install software-properties-common`
+1. Do vagrant up for the 3 VM's
 
-2. `ansible_controller_setup` script:
-````
-sudo apt install software-properties-common
+2. Do `sudo apt update && upgrade -y` for the 3 VM's
 
-````
+4. Script for ansible controller setup - On the controller terminal run `sudo apt install software-properties-common`
+`sudo apt-add-repository ppa:ansible/ansible`
+`sudo apt-get update`
+`sudo apt-get install ansible`
+
+5. To change into the `web` VM, run `ssh vagrant@192.168.56.10`
+
+6. Password is: vagrant
+(you won't see the letters when you type)
