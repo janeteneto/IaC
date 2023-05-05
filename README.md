@@ -42,7 +42,7 @@ With this possible it is possible to automate tasks such as:
 - Security hardening and compliance
 - Continuous delivery and release management
 
-- It uses **clientless architecture**, which means it does not require any software to be installed on the target systems, it uses **SSH** instead
+- It uses **clientless/agentless architecture**, which means it does not require any software to be installed on the target systems, it uses **SSH** instead
 
 ![image](https://user-images.githubusercontent.com/129942042/236437344-27ed4426-d426-4a2e-b450-d5ed596e6a72.png)
 
@@ -54,5 +54,15 @@ With this possible it is possible to automate tasks such as:
 
 - Human-readable data serialisation **language** that is used to define data structures such as lists, maps, and key-value pairs.
 - Used to define the desired state of infrastructure resources, such as servers, applications, and network devices. Ansible uses YAML syntax to create **playbooks**, which are scripts that define a set of tasks that should be executed on a set of hosts.
+- Used by Docker and Kuberneties.
 
 **Playbooks** - In Ansible, playboos are YAML files that describe the configuration and deployment of infrastructure resources. Playbooks contain a set of tasks, each of which performs a specific action on the target host(s), such as installing software packages, configuring settings, and starting or stopping services.
+
+3 vm in vagrant
+ansible is build in python
+script is in Ansible controller (yaml file)
+we dont need ansible on the nodes only the controller
+dependencies: 
+- Python betwwen 2.7 and 3.6
+- Ubuntu 18.04 (bcus it has git and python by default)
+node = vm, ec2, instance
