@@ -1,10 +1,14 @@
 # IaC
 
+![image](https://user-images.githubusercontent.com/129942042/236436302-1d62c100-0029-4826-a092-01d8e13681f2.png)
+
 - **Infrastructure as Code** is a software engineering **approach** that involves managing and provisioning computing infrastructure (e.g. servers, networks, databases, etc.) using code and automation instead of manual configuration.
 - This approach treats infrastructure as software and uses version control, testing, and other software engineering practices to manage it.
 - Used in DevOps environments to automate the deployment of applications and infrastructure changes, and to ensure that infrastructure is consistent, scalable, and secure.
 
 - **Benefits** include, automation, consistency, scalability, security and collaboration. Popular IaC tools such as **Terraform, Ansible, Puppet, and Chef** are used extensively in the industry to implement these benefits.
+
+![image](https://user-images.githubusercontent.com/129942042/236436759-6767c113-fcd1-460e-a056-4461ce9e59da.png)
 
 - It is being used in a variety of industries, such as tech, health and government. Examples of companies include Netflix.
 
