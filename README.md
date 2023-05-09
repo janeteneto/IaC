@@ -4,9 +4,9 @@
 
 - **Infrastructure as Code** is a software engineering **approach** that involves managing and provisioning computing infrastructure (e.g. servers, networks, databases, etc.) using code and automation instead of manual configuration.
 - This approach treats infrastructure as software and uses version control, testing, and other software engineering practices to manage it.
-- Used in DevOps environments to automate the deployment of applications and infrastructure changes, and to ensure that infrastructure is consistent, scalable, and secure.
+- Used in DevOps environments to automate the deployment of applications and infrastructure changes and to ensure that infrastructure is consistent, scalable, and secure.
 
-- **Benefits** include, automation, consistency, scalability, security and collaboration. Popular IaC tools such as **Terraform, Ansible, Puppet, and Chef** are used extensively in the industry to implement these benefits.
+- **Benefits** include automation, consistency, scalability, security and collaboration. Popular IaC tools such as **Terraform, Ansible, Puppet, and Chef** are used extensively in the industry to implement these benefits.
 
 ![image](https://user-images.githubusercontent.com/129942042/236436759-6767c113-fcd1-460e-a056-4461ce9e59da.png)
 
@@ -101,7 +101,7 @@ host_key_checking = false
 ````
 - this is to make the next step work
 
-10. `Run `sudo nano hosts` - to open hosts file and add this:
+10. Run `sudo nano hosts` - to open hosts file and add this:
 
 ````
 [web]
@@ -110,6 +110,7 @@ host_key_checking = false
 192.168.33.11 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
 ````
 11. Run `sudo ansible web -m ping` - to send the ping request to all the server nodes in the ansible file
+
 
 ### How to copy a file from controller to the web server
 
