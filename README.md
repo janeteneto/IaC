@@ -160,7 +160,35 @@ sudo ansible web -m copy -a "src=/etc/ansible/testing.txt dest=/home/vagrant"
 
 3. Run `sudo ansible-playbook install-nginx-playbook.yml` - to use the playbook
 
-4. Do `sudo ansible web -a "systemctl status nginx"` - to check the status of ngin in the web vm
+4. Do `sudo ansible web -a "systemctl status nginx"` - to check the status of nginx in the web vm
+
+### How to create a playbook to install nodejs in the `web` server and start the app
+
+1. Create a yml file with the command `sudo nano install-nodejs-playbook.yml`
+
+2. Add the following script:
+````
+---
+- hosts: web
+  gather_facts: yes
+  become: true
+  tasks:
+  - name: Install nodejs in web server
+    apt: pkg=nodejs state=present
+  - name: Install npm in web server
+    apt: pkg=npm state=present
+  - name: Install python in web server
+````
+
+3. As the other playbook, run `sudo ansible-playbook install-nodejs-playbook.yml` - to use the playbook
+
+4. Move app folder to the web VM
+
+5. Start the app on web using the command:
+
+````
+sudo ansible web -a "npm start app"
+````
 
 **Some useful commands are:**
 
