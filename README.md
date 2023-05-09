@@ -125,6 +125,36 @@ sudo ansible web -m copy -a "src=/etc/ansible/testing.txt dest=/home/vagrant"
 - `src` - is where you put the path to the file you want to copy
 - `dest` - is where you put the path to where you want to paste the file. In this case I wanted to paste `testing.txt` in the web's home location.
 
+### How to create a playbook to install nginx in the `web` server
+
+- Have in mind that a yaml file starts with `----`
+
+1. Run `sudo nano install-nginx-playbook.yml`
+
+2. Add this script:
+
+````
+---
+- hosts: web
+  gather_facts: yes
+  become:true
+  tasks:
+  - name: Install nginx in web-server
+    apt: pkg=nginx state=present
+````
+
+- This means:
+
+`- hosts: web` - where would you like to install nginx
+`gather_facts: yes` - would you like to see logs
+`become: true` - do we need admin access - sudo
+  `tasks:
+  - name: Install nginx in web-server` - instructions
+    `apt: pkg=nginx state=present` - ensures nginx status is active
+
+3. Run `sudo ansible-playbook install-nginx-playbook.yml` - to use the playbook
+
+4. Do `sudo ansible web -a "systemctl status nginx"` - to check teh status of ngin in the web vm
 
 **Some useful commands are:**
 
