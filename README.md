@@ -85,3 +85,14 @@ With this possible it is possible to automate tasks such as:
 
 6. Password is: vagrant
 (you won't see the letters when you type)
+
+#
+`cd /etc/ansible/`
+`sudo apt install tree` - see list (`ls`) but in a tree format
+`sudo ansible all -m ping` - goes to posts file and looks for agent nodes, if finds will send a request to ping
+`sudo nano hosts` 
+add this : 
+````
+[web]
+192.168.33.10
+````
