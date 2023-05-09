@@ -96,3 +96,29 @@ add this :
 [web]
 192.168.33.10
 ````
+
+#
+`cd /etc/ansible/`
+`sudo apt install tree` - see list (`ls`) but in a tree format
+`sudo ansible all -m ping` - goes to posts file and looks for agent nodes, if finds will send a request to ping
+`sudo nano hosts` 
+add this : 
+````
+[web]
+192.168.33.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+````
+run `sudo ansible web -m ping`
+
+- do the same for db
+- add `host_key_checking = false` to ansible.cfg
+`sudo ansible web -a "date"` - to check date
+`sudo ansible all -a "date"` - to check date in all the servers
+`sudo ansible all -a "uname -a"` - to check who is the user in all servers
+`sudo ansible all -a "free"` - will tell you the free memory available for all the servers
+`sudo ansible all -a "ls"` - to check 
+
+`sudo nano testing.txt`
+
+testing data transfer from the controller to web-vm using adhoc command
+find an adhoc command to send this file from controller to web-vm's home location
+
