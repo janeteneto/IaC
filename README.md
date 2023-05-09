@@ -182,13 +182,17 @@ sudo ansible web -m copy -a "src=/etc/ansible/testing.txt dest=/home/vagrant"
 
 3. As the other playbook, run `sudo ansible-playbook install-nodejs-playbook.yml` - to use the playbook
 
-4. Move app folder to the web VM
-
-5. Start the app on web using the command:
-
+4. Move app folder to the web VM with the command:
 ````
-sudo ansible web -a "npm start app"
+scp -r /c/Users/user/tech221_virtualisation/app vagrant@192.168.33.10:/home/vagrant
 ````
+- change the path to app folder to your own
+
+5. Ssh into web vm and cd into app
+
+6. Run `node app.js`
+
+-App should be running on it's ip on port 3000
 
 **Some useful commands are:**
 
