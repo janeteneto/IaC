@@ -154,7 +154,7 @@ sudo ansible web -m copy -a "src=/etc/ansible/testing.txt dest=/home/vagrant"
 
 3. Run `sudo ansible-playbook install-nginx-playbook.yml` - to use the playbook
 
-4. Do `sudo ansible web -a "systemctl status nginx"` - to check teh status of ngin in the web vm
+4. Do `sudo ansible web -a "systemctl status nginx"` - to check the status of ngin in the web vm
 
 **Some useful commands are:**
 
