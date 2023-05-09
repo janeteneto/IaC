@@ -137,7 +137,7 @@ sudo ansible web -m copy -a "src=/etc/ansible/testing.txt dest=/home/vagrant"
 ---
 - hosts: web
   gather_facts: yes
-  become:true
+  become: true
   tasks:
   - name: Install nginx in web-server
     apt: pkg=nginx state=present
@@ -146,11 +146,17 @@ sudo ansible web -m copy -a "src=/etc/ansible/testing.txt dest=/home/vagrant"
 - This means:
 
 `- hosts: web` - where would you like to install nginx
+
 `gather_facts: yes` - would you like to see logs
+
 `become: true` - do we need admin access - sudo
-  `tasks:
-  - name: Install nginx in web-server` - instructions
-    `apt: pkg=nginx state=present` - ensures nginx status is active
+ ````
+ tasks:
+  - name: Install nginx in web-server
+  ````
+  - instructions
+   
+ `apt: pkg=nginx state=present` - ensures nginx status is active
 
 3. Run `sudo ansible-playbook install-nginx-playbook.yml` - to use the playbook
 
