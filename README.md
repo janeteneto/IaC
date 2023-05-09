@@ -72,11 +72,15 @@ With this possible it is possible to automate tasks such as:
 - Ubuntu 18.04 (bcus it has git and python by default)
 (we don't need to install these anywhere)
 
+## Steps:
+
 1. Do vagrant up for the 3 VM's
 
 2. Do `sudo apt update && upgrade -y` for the 3 VM's
 
-4. Script for ansible controller setup - On the controller terminal run `sudo apt install software-properties-common`
+4. Script for ansible controller setup - On the controller terminal run:
+
+`sudo apt install software-properties-common`
 `sudo apt-add-repository ppa:ansible/ansible`
 `sudo apt-get update`
 `sudo apt-get install ansible`
@@ -86,39 +90,51 @@ With this possible it is possible to automate tasks such as:
 6. Password is: vagrant
 (you won't see the letters when you type)
 
-#
-`cd /etc/ansible/`
-`sudo apt install tree` - see list (`ls`) but in a tree format
-`sudo ansible all -m ping` - goes to posts file and looks for agent nodes, if finds will send a request to ping
-`sudo nano hosts` 
-add this : 
-````
-[web]
-192.168.33.10
-````
+7. To exit, type `exit`
 
-#
-`cd /etc/ansible/`
-`sudo apt install tree` - see list (`ls`) but in a tree format
-`sudo ansible all -m ping` - goes to posts file and looks for agent nodes, if finds will send a request to ping
-`sudo nano hosts` 
-add this : 
+8. Back on the controller vm, run `cd /etc/ansible/`
+
+
+9. Run `sudo nano ansible.cfg` to open this file in the nano editor and the following line of code:
+````
+host_key_checking = false
+````
+- this is to make the next step work
+
+10. `Run `sudo nano hosts` - to open hosts file and add this:
+
 ````
 [web]
 192.168.33.10 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
+[db]
+192.168.33.11 ansible_connection=ssh ansible_ssh_user=vagrant ansible_ssh_pass=vagrant
 ````
-run `sudo ansible web -m ping`
+11. Run `sudo ansible web -m ping` - to send the ping request to all the server nodes in the ansible file
 
-- do the same for db
-- add `host_key_checking = false` to ansible.cfg
-`sudo ansible web -a "date"` - to check date
-`sudo ansible all -a "date"` - to check date in all the servers
-`sudo ansible all -a "uname -a"` - to check who is the user in all servers
-`sudo ansible all -a "free"` - will tell you the free memory available for all the servers
-`sudo ansible all -a "ls"` - to check 
+### How to copy a file from controller to the web server
 
-`sudo nano testing.txt`
+1. Create a file with an approrpiate name and open it with nano editor to add a line
 
-testing data transfer from the controller to web-vm using adhoc command
-find an adhoc command to send this file from controller to web-vm's home location
+2. On the controller vm run the following command:
 
+````
+sudo ansible web -m copy -a "src=/etc/ansible/testing.txt dest=/home/vagrant"
+````
+
+- `src` - is where you put the path to the file you want to copy
+- `dest` - is where you put the path to where you want to paste the file. In this case I wanted to paste `testing.txt` in the web's home location.
+
+
+**Some useful commands are:**
+
+- `sudo apt install tree` - see list (`ls`) but in a tree format
+
+- `sudo ansible all -m ping` - looks for agent nodes in the cfn file, if it finds them, it will send a request to ping the server nodes
+
+- `sudo ansible web -a "date"` - to check date
+
+- `sudo ansible all -a "date"` - to check date in all the servers
+
+- `sudo ansible all -a "uname -a"` - to check who is the user in all servers
+
+- `sudo ansible all -a "free"` - will tell you the free memory available for all the servers
