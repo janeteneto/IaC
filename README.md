@@ -216,6 +216,26 @@ scp -r /c/Users/user/tech221_virtualisation/app vagrant@192.168.33.10:/home/vagr
 
 5. Do a status check of Mongodb with the command `ansible db -a "sudo systemctl status mongodb"`. This will only work before you ssh into db and have the hosts and yml file set correctly. 
 
+### DB condifguration
+
+1. Make sure you to ssh into the db through the controller
+
+2. Cd into `/etc`
+
+3. Run `sudo nano mongodb.conf` to get inside the file
+
+4. Change bind ip to 0.0.0.0 for port 2701
+
+5. Run `sudo systemctl restart mongodb` and `sudo systemctl enable mongodb`
+
+6. Ssh into web ip
+
+7. Run `export DB_HOST=mongodb://192.168.33.11:27017/posts`
+
+8. Cd into app folder
+
+9. Run `npm install` then `npm start`
+
 **Some useful commands are:**
 
 - `sudo apt install tree` - see list (`ls`) but in a tree format
