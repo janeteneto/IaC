@@ -260,6 +260,10 @@ scp -r /c/Users/user/tech221_virtualisation/app vagrant@192.168.33.10:/home/vagr
       shell: systemctl enable mongodb
 ````
 
+3. Run `sudo ansible-playbook mongo-conf.yml` to run the script
+
+4. Do a status check to see if mongodb is active and running with command `ansible `
+
 **Some useful commands are:**
 
 - `sudo apt install tree` - see list (`ls`) but in a tree format
