@@ -238,17 +238,26 @@ scp -r /c/Users/user/tech221_virtualisation/app vagrant@192.168.33.10:/home/vagr
 
 ### Playbook to change bindIp on mongodb conf
 
+1. Make sure to be in the controller on the `/etc/ansible`
+
+2. Run `sudo nano mongo-conf.yml` and add the following script:
+
 ````
 ---
 - hosts: db
   gather_facts: yes
   become: true
   tasks:
-  - name: Change bindip
-    lineinfile:
-      path: /etc/mongodb.conf
-      regexp: '^bindIp.*$'
-      line: 'bindIp: 0.0.0.0'
+    - name: Change bindip
+      lineinfile:
+        path: /etc/mongodb.conf
+        regexp: 'bind_ip = 0.0.0.0'
+        line: 'bind_ip = 0.0.0.0'
+        backrefs: yes
+    - name: restart mongodb
+      shell: systemctl restart mongodb
+    - name: enable mongodb
+      shell: systemctl enable mongodb
 ````
 
 **Some useful commands are:**
