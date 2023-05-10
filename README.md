@@ -196,8 +196,6 @@ scp -r /c/Users/user/tech221_virtualisation/app vagrant@192.168.33.10:/home/vagr
 
 ### Setup of MongoDB in the db agent node
 
-** Create playbook with yml script: **
-
 1. Cd into `/etc/ansible/`
 
 2. Run `sudo nano mongo-db-playbook.yml` to create this new file
@@ -205,7 +203,13 @@ scp -r /c/Users/user/tech221_virtualisation/app vagrant@192.168.33.10:/home/vagr
 3.  Add this script to the file:
 
 ````
-
+---
+- hosts: db
+  gather_facts: yes
+  become: true
+    tasks:
+  - name: Configuring Mongodb in db agent node
+    apt: pkg=mongodb state=present
 ````
 
 **Some useful commands are:**
