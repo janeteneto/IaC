@@ -212,6 +212,10 @@ scp -r /c/Users/user/tech221_virtualisation/app vagrant@192.168.33.10:/home/vagr
     apt: pkg=mongodb state=present
 ````
 
+4. Run `sudo nano ansible-playbook mongo-db-playbook.yml` to run the script
+
+5. Do a status check of Mongodb with the command `ansible db -a "sudo systemctl status mongodb"`. This will only work before you ssh into db and have the hosts and yml file set correctly. 
+
 **Some useful commands are:**
 
 - `sudo apt install tree` - see list (`ls`) but in a tree format
