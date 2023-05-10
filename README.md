@@ -61,8 +61,6 @@ With this possible it is possible to automate tasks such as:
 
 # Ansible Controller Setup
 
-![2023-05-05](https://user-images.githubusercontent.com/129942042/236445500-1c2c5e9c-b080-499d-abc4-2092357c751e.png)
-
 - The new script on the vagrant file is to run 3 virtual machines in vagrant
 - Script is in Ansible controller (yaml file)
 - We dont need ansible on the nodes only the controller
