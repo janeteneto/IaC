@@ -236,6 +236,21 @@ scp -r /c/Users/user/tech221_virtualisation/app vagrant@192.168.33.10:/home/vagr
 
 9. Run `npm install` then `npm start`
 
+### Playbook to change bindIp on mongodb conf
+
+````
+---
+- hosts: db
+  gather_facts: yes
+  become: true
+  tasks:
+  - name: Change bindip
+    lineinfile:
+      path: /etc/mongodb.conf
+      regexp: '^bindIp.*$'
+      line: 'bindIp: 0.0.0.0'
+````
+
 **Some useful commands are:**
 
 - `sudo apt install tree` - see list (`ls`) but in a tree format
