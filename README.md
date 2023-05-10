@@ -74,6 +74,8 @@ With this possible it is possible to automate tasks such as:
 
 ## Steps:
 
+![image](https://github.com/janeteneto/IaC/assets/129942042/d784173d-53df-4536-90f4-688c997791d5)
+
 1. Do vagrant up for the 3 VM's
 
 2. Do `sudo apt update && upgrade -y` for the 3 VM's
