@@ -25,6 +25,7 @@ choco install terraform
 4. Add another variable: 'aws_secret_access_key', Value: enter the secret access key
 
 ###
+
 1. Open a Git terminal as admin
 
 2. Create a new directory with an appropriate name. I named it `terraform`, with the command `mkdir terraform`
