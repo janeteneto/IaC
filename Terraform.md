@@ -40,7 +40,7 @@ provider "aws" {
 
 5. Save and exit
 
-6. Run `terraform init` - to initialize the insfrastructure, you should see on the terminal a message saying that it has bee
+6. Run **`terraform init`** - to initialize the insfrastructure, you should see on the terminal a message saying that it has bee
 
 7. Open the same folder with command `nano main.tf`
 
@@ -55,3 +55,5 @@ resource "aws_instance" "app_instance" {
         }
 }
 ````
+
+9. Save and exit and run **`terraform plan`**
