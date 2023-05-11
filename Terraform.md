@@ -23,3 +23,35 @@ choco install terraform
 3. Add the variable: Name: 'aws_access_key_id', Value: enter the access key
 
 4. Add another variable: 'aws_secret_access_key', Value: enter the secret access key
+
+###
+1. Open a Git terminal as admin
+
+2. Create a new directory with an appropriate name. I named it `terraform`, with the command `mkdir terraform`
+
+3. Run `nano main.tf` - to create and edit a terraform file with instructions for the aws infrastructure
+
+4. Add the following code:
+````
+provider "aws" {
+         region = "eu-west-1"
+}
+````
+
+5. Save and exit
+
+6. Run `terraform init` - to initialize the insfrastructure, you should see on the terminal a message saying that it has bee
+
+7. Open the same folder with command `nano main.tf`
+
+8. Add the following code:
+````
+resource "aws_instance" "app_instance" {
+        ami = "ami-id"
+        instance_type = "t2.micro"
+        associate_public_ip_address = true
+        tags = {
+          Name = "eng221_shahrukh_terraform_app"
+        }
+}
+````
