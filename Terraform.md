@@ -1,3 +1,6 @@
+
+![image](https://github.com/janeteneto/IaC/assets/129942042/5d473528-70e8-4df9-b774-a9bbe70db69f)
+
 ### Installing Terraform using Chocolatey
 
 1. Open a Windows Powershell terminal as admin (run as admin)
