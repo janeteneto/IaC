@@ -68,6 +68,5 @@ resource "aws_instance" "app_instance" {
 
 ### Building a VPC network with Terraform
 
-First, let's recap how is a VPC created:
+![2023-05-11 (6)](https://github.com/janeteneto/IaC/assets/129942042/49dd639b-3384-4734-a4b3-96d0ca191ac3)
 
-![2023-05-11 (6)](https://github.com/janeteneto/IaC/assets/129942042/42d127e1-ac42-4bca-9e78-0d779d1d0ce6)
