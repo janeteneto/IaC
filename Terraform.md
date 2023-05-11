@@ -1,6 +1,6 @@
 ### Installing Terraform using Chocolatey
 
-1. Open a Windows Powershell terminal as admin (run as admin9
+1. Open a Windows Powershell terminal as admin (run as admin)
 
 2. Paste the following code to automatically install Chocolatey:
 ````
