@@ -61,3 +61,7 @@ resource "aws_instance" "app_instance" {
 ````
 
 9. Save and exit and run **`terraform plan`**
+
+10. Run **`terraform apply`**
+
+11. type yes
