@@ -92,4 +92,3 @@ resource "aws_instance" "app_instance" {
 - `/c/Users/user/tech221_virtualisation/app` is the path to where your app folder is
 
 - `52.49.90.189` is the puclic ip of your instance
-
