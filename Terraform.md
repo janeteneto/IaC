@@ -70,10 +70,26 @@ resource "aws_instance" "app_instance" {
 
 ![2023-05-11 (6)](https://github.com/janeteneto/IaC/assets/129942042/49dd639b-3384-4734-a4b3-96d0ca191ac3)
 
-####
-playbook to configure ngin, nodejs, mongodb
-change hosts to aws
-hosts : add aws ec2-ip with method authentication ~/.ssh/file.pem
+#### Main.tf Configuration for VPC, subnet and instance
 
+- **Let's launch a VPC,  public subnet, internet gateway, route table and ec2 instance using Terraform. This is how it should look like:**
 
--
+![2023-05-12 (6)](https://github.com/janeteneto/IaC/assets/129942042/6b95bcbd-86d9-4fd9-8f60-f304924a111b)
+ 
+ - On the image above, I first provided a region, then the first resource is for my vpc.
+ - Then for internet gateway, I refered to the my vpc so that it is connected
+ - On the security groups resources, I made sure to allow ports 22, 80 and 3000 from anywhere
+
+![2023-05-12 (7)](https://github.com/janeteneto/IaC/assets/129942042/c5c3aef0-8cd6-4442-b87a-59ea1049c78d)
+
+- On the image above, 
+### Launch app on instance (manually)
+
+1. Open a new terminal and cd into .ssh file
+
+2. Run `scp -i "tech221.pem" -r /c/Users/user/tech221_virtualisation/app ubuntu@52.49.90.189:/home/ubuntu` - to copy app to instance, in which:
+
+- `/c/Users/user/tech221_virtualisation/app` is the path to where your app folder is
+
+- `52.49.90.189` is the puclic ip of your instance
+
