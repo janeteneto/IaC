@@ -70,3 +70,10 @@ resource "aws_instance" "app_instance" {
 
 ![2023-05-11 (6)](https://github.com/janeteneto/IaC/assets/129942042/49dd639b-3384-4734-a4b3-96d0ca191ac3)
 
+####
+playbook to configure ngin, nodejs, mongodb
+change hosts to aws
+hosts : add aws ec2-ip with method authentication ~/.ssh/file.pem
+
+
+-
